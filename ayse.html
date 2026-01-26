@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<title>Fotoğraf Desteği Tasarımı</title>
+<style>
+  body {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .deste {
+    position: relative;
+    width: 200px;
+    height: 250px;
+    perspective: 1000px;
+  }
+
+  .kart {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    border: 6px solid black; /* fotoğrafın etrafındaki siyah çerçeve */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.3);
+    background: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    object-fit: cover;
+  }
+
+  /* Fotoğrafların her birini biraz kaydırıyoruz ve döndürüyoruz */
+  .kart:nth-child(1) {
+    top: 0;
+    left: 0;
+    transform: rotate(-15deg);
+    z-index: 1;
+  }
+
+  .kart:nth-child(2) {
+    top: 20px;
+    left: 20px;
+    transform: rotate(-7deg);
+    z-index: 2;
+  }
+
+  .kart:nth-child(3) {
+    top: 40px;
+    left: 40px;
+    transform: rotate(-3deg);
+    z-index: 3;
+  }
+
+  .kart:nth-child(4) {
+    top: 60px;
+    left: 60px;
+    transform: rotate(0deg);
+    z-index: 4;
+  }
+
+  .kart:nth-child(5) {
+    top: 80px;
+    left: 80px;
+    transform: rotate(5deg);
+    z-index: 5;
+  }
+
+  /* Hover ile öne çıkarma efekti */
+  .kart:hover {
+    transform: rotate(0deg) scale(1.1);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.6);
+    z-index: 10 !important;
+  }
+
+  /* Fotoğrafın içi */
+  .kart img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Bilgi alanı */
+  .bilgi {
+    margin-left: 60px;
+    max-width: 220px;
+  }
+
+  .bilgi h2 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+  }
+
+  .bilgi p {
+    color: #555;
+    font-size: 1rem;
+  }
+
+  /* Deste ve bilgiler yan yana */
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="deste">
+    <div class="kart"><img src="ay5.png" alt="Kişi 2" /></div>
+    <div class="kart"><img src="ay4.png" alt="Kişi 3" /></div>
+    <div class="kart"><img src="ay3.png" alt="Kişi 4" /></div>
+    <div class="kart"><img src="ay2.png" alt="Kişi 5" /></div>
+  </div>
+
+  <div class="bilgi">
+    <h2>Ayşe Tay Deli</h2>
+    <ul></ul>
+      <li>Yaş: 26</li>
+      <li>Meslek: Fizyoterapist (şu an Satış Profesörü 😄)</li>
+      <li>Hobiler: Gezmek, Kocisinin yani</li>
+      <li>Favori Takım: Galatasaray</li>
+      <li>Yaşadığı Şehir: Melbourne</li>
+      <li>Kişilik: Komik, Anaç ruhlu, Çok güzel yemek yapar, Lider ruhlu</li>
+      <li>Favori Yemek: Perde Pilavı</li>
+
+    </ul>
+  </div>
+</div>
+
+</body>
+</html>

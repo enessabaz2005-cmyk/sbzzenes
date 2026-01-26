@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#ffffff">
+  <title>Giriş Sayfası</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Dinamik arka plan canvas -->
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Giriş container -->
+  <div class="container">
+    <img src="IMG_3445.jpg" alt="Giriş Fotoğrafı">
+    <input type="text" id="nameInput" placeholder="İsminizi girin">
+    <button type="button" onclick="kontrolEt()">Gönder</button>
+    <p id="hata"></p>
+  </div>
+
+  <script>
+    document.getElementById("nameInput").addEventListener("keydown", function (e) {
+      if (e.key === "Enter") {
+        e.preventDefault(); // Enter ile ilerlemeyi engeller
+      }
+    });
+  </script>
+  <script src="script.js"></script>
+</body>
+</html>
